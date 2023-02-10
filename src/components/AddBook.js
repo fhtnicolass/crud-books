@@ -76,7 +76,7 @@ const AddBook = ({ id, setBookId }) => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBookTitle">
             <InputGroup>
-              <InputGroup.Text id="formBookTitle">B</InputGroup.Text>
+              <InputGroup.Text id="formBookTitle">Livro</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Titulo do livro"
@@ -88,7 +88,7 @@ const AddBook = ({ id, setBookId }) => {
 
           <Form.Group className="mb-3" controlId="formBookAuthor">
             <InputGroup>
-              <InputGroup.Text id="formBookAuthor">A</InputGroup.Text>
+              <InputGroup.Text id="formBookAuthor">Autor</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Autor do livro"
