@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
-import BookDataService from "../services/book.services";
+import BookDataService from "../services/book.services"; 
 
 const BooksList = ({ getBookId }) => {
   const [books, setBooks] = useState([]);
@@ -22,7 +22,7 @@ const BooksList = ({ getBookId }) => {
     <>
       <div className="mb-2">
         <Button variant="dark edit" onClick={getBooks}>
-          Refresh List
+          Recarregar Lista
         </Button>
       </div>
 
@@ -31,10 +31,10 @@ const BooksList = ({ getBookId }) => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Book Title</th>
-            <th>Book Author</th>
+            <th>Titulo</th>
+            <th>Autor</th>
             <th>Status</th>
-            <th>Action</th>
+            <th>Opções</th>
           </tr>
         </thead>
         <tbody>

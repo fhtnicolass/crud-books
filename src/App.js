@@ -8,14 +8,14 @@ function App() {
   const [bookId, setBookId] = useState("");
 
   const getBookIdHandler = (id) => {
-    console.log("The ID of document to be edited: ", id);
+    console.log("Id do documento a ser editado: ", id);
     setBookId(id);
   };
   return (
     <>
       <Navbar bg="dark" variant="dark" className="header">
         <Container>
-          <Navbar.Brand href="#home">Library - Firebase CRUD</Navbar.Brand>
+          <Navbar.Brand href="#home">Biblioteca - Firebase CRUD</Navbar.Brand>
         </Container>
       </Navbar>
 

@@ -105,7 +105,7 @@ const AddBook = ({ id, setBookId }) => {
                 setFlag(true);
               }}
             >
-              Available
+              Disponível
             </Button>
             <Button
               variant="danger"
@@ -115,12 +115,12 @@ const AddBook = ({ id, setBookId }) => {
                 setFlag(false);
               }}
             >
-              Not Available
+              Não disponível
             </Button>
           </ButtonGroup>
           <div className="d-grid gap-2">
             <Button variant="primary" type="Submit">
-              Add/ Update
+              Adicionar/ Atualizar
             </Button>
           </div>
         </Form>
