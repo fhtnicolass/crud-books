@@ -1,26 +1,51 @@
+body {
+  background-color: #3c4246;
+  color: white;
+}
+
+table,
+td,
+tr,
+th {
+  color: white;
+}
+
 .header .container {
   justify-content: center;
+  background-color: linear-gradient(to right, #1a1a1a, #212529);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 .input-group-text {
   background-color: #212529;
   color: #fff;
   font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+
 .edit,
 .delete {
   padding: 0px 6px;
   border-radius: 2px;
+  background-color: linear-gradient(to right, #1a1a1a, #212529);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .edit {
   margin-right: 10px;
 }
+
 table {
   text-align: center;
+  background-color: #212529;
+  color: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -30,7 +55,7 @@ table {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #151b25;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,16 +63,20 @@ table {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: linear-gradient(to right, #151b25, #212529);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .App-link {
   color: #61dafb;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

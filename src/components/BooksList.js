@@ -27,7 +27,7 @@ const BooksList = ({ getBookId }) => {
       </div>
 
       {/* <pre>{JSON.stringify(books, undefined, 2)}</pre>} */}
-      <Table striped bordered hover size="sm">
+      <Table>
         <thead>
           <tr>
             <th>#</th>

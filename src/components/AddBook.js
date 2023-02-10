@@ -5,7 +5,7 @@ import BookDataService from "../services/book.services";
 const AddBook = ({ id, setBookId }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const [status, setStatus] = useState("Available");
+  const [status, setStatus] = useState("Disponivel");
   const [flag, setFlag] = useState(true);
   const [message, setMessage] = useState({ error: false, msg: "" });
 
@@ -13,7 +13,7 @@ const AddBook = ({ id, setBookId }) => {
     e.preventDefault();
     setMessage("");
     if (title === "" || author === "") {
-      setMessage({ error: true, msg: "All fields are mandatory!" });
+      setMessage({ error: true, msg: "Campos obrigatórios!" });
       return;
     }
     const newBook = {
@@ -27,10 +27,10 @@ const AddBook = ({ id, setBookId }) => {
       if (id !== undefined && id !== "") {
         await BookDataService.updateBook(id, newBook);
         setBookId("");
-        setMessage({ error: false, msg: "Updated successfully!" });
+        setMessage({ error: false, msg: "Atualizado!" });
       } else {
         await BookDataService.addBooks(newBook);
-        setMessage({ error: false, msg: "New Book added successfully!" });
+        setMessage({ error: false, msg: "Livro adicionado com sucesso!" });
       }
     } catch (err) {
       setMessage({ error: true, msg: err.message });
@@ -38,13 +38,14 @@ const AddBook = ({ id, setBookId }) => {
 
     setTitle("");
     setAuthor("");
+    
   };
 
   const editHandler = async () => {
     setMessage("");
     try {
       const docSnap = await BookDataService.getBook(id);
-      console.log("the record is :", docSnap.data());
+      console.log("os dados sao :", docSnap.data());
       setTitle(docSnap.data().title);
       setAuthor(docSnap.data().author);
       setStatus(docSnap.data().status);
@@ -54,7 +55,7 @@ const AddBook = ({ id, setBookId }) => {
   };
 
   useEffect(() => {
-    console.log("The id here is : ", id);
+    console.log("Id : ", id);
     if (id !== undefined && id !== "") {
       editHandler();
     }
@@ -78,7 +79,7 @@ const AddBook = ({ id, setBookId }) => {
               <InputGroup.Text id="formBookTitle">B</InputGroup.Text>
               <Form.Control
                 type="text"
-                placeholder="Book Title"
+                placeholder="Titulo do livro"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -90,7 +91,7 @@ const AddBook = ({ id, setBookId }) => {
               <InputGroup.Text id="formBookAuthor">A</InputGroup.Text>
               <Form.Control
                 type="text"
-                placeholder="Book Author"
+                placeholder="Autor do livro"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
               />
@@ -101,7 +102,7 @@ const AddBook = ({ id, setBookId }) => {
               disabled={flag}
               variant="success"
               onClick={(e) => {
-                setStatus("Available");
+                setStatus("Disponivel");
                 setFlag(true);
               }}
             >
@@ -111,7 +112,7 @@ const AddBook = ({ id, setBookId }) => {
               variant="danger"
               disabled={!flag}
               onClick={(e) => {
-                setStatus("Not Available");
+                setStatus("Não disponível");
                 setFlag(false);
               }}
             >
